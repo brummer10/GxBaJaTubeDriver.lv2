@@ -1,0 +1,28 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<http://guitarix.sourceforge.net/plugins/gx_bajatubedriver_#_bajatubedriver_>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-gxbajatubedriver.html> ;
+        modgui:stylesheet <modgui/stylesheet-gxbajatubedriver.css> ;
+        modgui:screenshot <modgui/screenshot-gxbajatubedriver.png> ;
+        modgui:thumbnail <modgui/thumbnail-gxbajatubedriver.png> ;
+        modgui:brand " Guitarix " ;
+        modgui:label "GxBaJaTubeDriver" ;
+        modgui:model "combo-model-001" ;
+        modgui:panel "0550" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "DRIVE" ;
+            lv2:name "DRIVE" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "TONE" ;
+            lv2:name "TONE" ;
+        ] , [
+            lv2:index 2 ;
+            lv2:symbol "VOLUME" ;
+            lv2:name "VOLUME" ;
+        ] ;
+    ] .

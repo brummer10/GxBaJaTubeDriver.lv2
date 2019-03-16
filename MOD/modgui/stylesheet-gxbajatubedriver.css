@@ -1,0 +1,153 @@
+/* SKINS */
+.mod-panel{{{cns}}} {
+    border-radius: 20px;
+}
+.mod-panel-0720{{{cns}}} {
+    background-image: url(/resources/combos/pedal.png{{{ns}}});
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 180px;
+    position: relative;
+    width: 700px;
+}
+
+/* THE AUTHOR */
+.mod-panel{{{cns}}} .mod-plugin-brand h1 {
+    top: 30px;
+    color: #666;
+    font-size: 14px;
+    font-weight: bold;
+    left: 45px;
+    line-height: 1;
+    margin: 0;
+    position: absolute;
+}
+
+/* CONTROLS */
+.mod-panel{{{cns}}} .mod-control-group {
+    border-style: none;
+    bottom: 149px;
+    color: #999;
+    font-size: 10px;
+    font-weight: bold;
+    height: 71px;
+    left: 42px;
+    position: absolute;
+    right: 8px;
+    top: 47px;
+}
+
+.mod-panel{{{cns}}} .mod-control-group > div {
+    margin-right: 10px;
+}
+.mod-panel{{{cns}}} .mod-control-group-k {
+    border-style: none;
+    bottom: 149px;
+    color: #666;
+    font-size: 10px;
+    font-weight: bold;
+    height: 71px;
+    left: 298px;
+    position: absolute;
+    right: 8px;
+    top: 5px;
+}
+
+.mod-panel{{{cns}}} .mod-control-group-k > div {
+    margin-right: 20px;
+}
+
+.mod-panel{{{cns}}} .mod-pedal-input,
+.mod-panel{{{cns}}} .mod-pedal-output {
+    top: 55px;
+}
+
+/* SWITCH ON/OFF GENERAL */
+.mod-panel{{{cns}}} .mod-switch {
+    cursor: pointer;
+    float: left;
+    height: 71px;
+    position: relative;
+    width: 71px;
+}
+
+.mod-panel{{{cns}}} .mod-switch-image {
+    background-image: url(/resources/switches/pswitch.png{{{ns}}});
+    background-position: -9px 0px;
+    background-repeat: no-repeat;
+    background-size: auto 71px;
+    margin-top: 18px;
+    height: 71px;
+    width: 71px;
+}
+
+.mod-panel{{{cns}}} .mod-switch-image.on {
+    background-position: -79px 0px;
+}
+
+.mod-panel{{{cns}}} .mod-switch-image.off {
+    background-position: -8px 0px;
+}
+
+.mod-panel{{{cns}}} .mod-grid {
+    cursor: move;
+    float: left;
+    height: 71px;
+    position: relative;
+    width: 132px;
+}
+
+.mod-panel{{{cns}}} .mod-grid-image {
+    background-image: url(/resources/switches/grid.png{{{ns}}});
+    background-position: -9px 0px;
+    background-repeat: no-repeat;
+    background-size: auto 71px;
+    margin-top: 18px;
+    margin-left: 42px;
+    height: 86px;
+    width: 132px;
+}
+
+.mod-panel{{{cns}}} .mod-grid-image.on {
+    background-position: -132px 0px;
+}
+
+.mod-panel{{{cns}}} .mod-grid-image.off {
+    background-position: 0px 0px;
+}
+
+/* CHICKEN HEAD */
+.mod-panel{{{cns}}} .mod-knob {
+    float: left;
+    height: 101px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 71px;
+}
+
+.mod-panel{{{cns}}} .mod-knob .mod-knob-image {
+    background-image: url(/resources/knobs/knob.png{{{ns}}});
+    background-position: left 0px;
+    background-repeat: no-repeat;
+    background-size: auto 71px;
+    height: 71px;
+    margin-top: 18px;
+    position: relative;
+    width: 71px;
+    z-index: 2;
+}
+
+.mod-panel{{{cns}}} .mod-knob .mod-knob-title {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    height:18px;
+    left: 0;
+    overflow:hidden;
+    position: absolute;
+    right: 0;
+    text-transform: uppercase;
+    top: 0;
+    z-index: 1;
+}
