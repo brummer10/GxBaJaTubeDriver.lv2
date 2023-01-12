@@ -667,12 +667,6 @@ static void controller_expose(const gx_bajatubedriverUI * const ui,  const gx_co
 -----------------------------------------------------------------------
 ----------------------------------------------------------------------*/
 
-// hack to allow resizing below the initial size on gtk based hosts
-static void reset_request(gx_bajatubedriverUI * const ui) {
-	ui->resize->ui_resize(ui->resize->handle, ui->width/1.4, ui->height/1.4);
-	ui->first_resize = false;
-}
-
 // resize the xwindow and the cairo xlib surface
 static void resize_event(gx_bajatubedriverUI * const ui) {
 	XWindowAttributes attrs;
@@ -994,7 +988,6 @@ static void event_handler(gx_bajatubedriverUI * const ui) {
 					break;
 					case Button2:
 						// click on the mouse wheel
-						if (ui->first_resize) reset_request(ui);
 						//debug_print("Button2 \n");
 					break;
 					case Button3:
