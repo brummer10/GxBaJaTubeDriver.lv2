@@ -23,6 +23,7 @@
 #include <iostream>
 #include <cstring>
 #include <unistd.h>
+#include <cstdint>
 
 ///////////////////////// MACRO SUPPORT ////////////////////////////////
 

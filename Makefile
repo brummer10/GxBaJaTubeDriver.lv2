@@ -48,6 +48,9 @@
 		CC = $(CROSS)cc
 		CXX = $(CROSS)g++
 		LD = $(CROSS)ld
+	else ifneq (,$(findstring mingw,$(CXX)))
+		# Found
+		TARGET = Windows
 	else
 		# Not found
 		ifeq ($(UNAME_S), Linux) #LINUX
@@ -69,7 +72,7 @@
 		GUI_PLATFORM_FILES = $(GUI_PLATFORM_DIR)/gx_platform_linux.c
 	endif
 	ifeq ($(TARGET), Windows)
-		ECHO += -e
+		#ECHO += -e
 		ABI_LDFLAGS = -static -lpthread
 		GUI_LIBS = -liconv -lstdc++
 		PKGCONFIG_FLAGS = --static
@@ -79,6 +82,7 @@
 		GUI_PLATFORM_FILES = $(GUI_PLATFORM_DIR)/gx_platform_mswin.c
 	endif
 	ifeq ($(TARGET), Apple)
+		LIB_EXT = so
 		# insert magic here
 		GUI_PLATFORM_FILES = $(GUI_PLATFORM_DIR)/gx_platform_apple.c
 	endif
