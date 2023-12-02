@@ -39,6 +39,8 @@
 	OS := $(shell echo $$OS)
 	UNAME_S := $(shell uname -s)
 	GUI_PLATFORM_DIR = ./gui
+	# default library extension
+	LIB_EXT = so
 	# cross compilation (e.g.: PKG_CONFIG_PATH=/usr/local/pkgconfig make CROSS=x86_64-w64-mingw32- mod)
 	ifneq (,$(findstring mingw,$(CROSS)))
 		# Found
