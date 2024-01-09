@@ -27,8 +27,15 @@
 
 ///////////////////////// MACRO SUPPORT ////////////////////////////////
 
+#ifdef __APPLE__
+#define __rt_func
+#define __rt_data
+#define always_inline
+#else
 #define __rt_func __attribute__((section(".rt.text")))
 #define __rt_data __attribute__((section(".rt.data")))
+#define always_inline inline __attribute__((always_inline))
+#endif
 
 ///////////////////////// FAUST SUPPORT ////////////////////////////////
 
@@ -39,7 +46,6 @@
 #define max(x, y) (((x) > (y)) ? (x) : (y))
 #define min(x, y) (((x) < (y)) ? (x) : (y))
 
-#define always_inline inline __attribute__((always_inline))
 
 template <int32_t N> inline float faustpower(float x)
 {
