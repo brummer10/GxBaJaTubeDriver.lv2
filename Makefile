@@ -89,7 +89,9 @@
 		GUI_PLATFORM_FILES = $(GUI_PLATFORM_DIR)/gx_platform_apple.c
 	endif
 	# set compile flags
-	CXXFLAGS += -D_FORTIFY_SOURCE=2 -I. -I./dsp -I./plugin -fPIC -DPIC -O2 -Wall -fstack-protector -funroll-loops \
+	CXXFLAGS += -std=gnu++11 -D_FORTIFY_SOURCE=2 -I. -I./dsp -I./plugin -fPIC -DPIC -O2 -Wall -fstack-protector -funroll-loops \
+	 -ffast-math -fomit-frame-pointer -fstrength-reduce -fdata-sections -Wl,--gc-sections $(ABI_CXXFLAGS) $(SSE_CFLAGS)
+	CFLAGS += -D_FORTIFY_SOURCE=2 -I. -I./dsp -I./plugin -fPIC -DPIC -O2 -Wall -fstack-protector -funroll-loops \
 	 -ffast-math -fomit-frame-pointer -fstrength-reduce -fdata-sections -Wl,--gc-sections $(ABI_CXXFLAGS) $(SSE_CFLAGS)
 	LDFLAGS += -I. -shared $(ABI_LDFLAGS) -lm
 	GUI_LDFLAGS += -I./gui -shared $(ABI_LDFLAGS) -lm `$(PKGCONFIG) $(PKGCONFIG_FLAGS) --cflags --libs cairo` $(GUI_LIBS)
@@ -162,7 +164,7 @@ uninstall :
 
 $(NAME) : clean $(RES_OBJECTS)
 	$(CXX) $(CXXFLAGS) $(OBJECTS) $(LDFLAGS) -o $(NAME).$(LIB_EXT)
-	$(CC) $(CXXFLAGS) $(ABI_CFLAGS) $(GUI_OBJECTS) $(RES_OBJECTS) $(GUI_LDFLAGS) -o $(NAME)_ui.$(LIB_EXT)
+	$(CC) $(CFLAGS) $(ABI_CFLAGS) $(GUI_OBJECTS) $(RES_OBJECTS) $(GUI_LDFLAGS) -o $(NAME)_ui.$(LIB_EXT)
 	$(STRIP) -s -x -X -R .note.ABI-tag $(NAME).$(LIB_EXT)
 	$(STRIP) -s -x -X -R .note.ABI-tag $(NAME)_ui.$(LIB_EXT)
 
